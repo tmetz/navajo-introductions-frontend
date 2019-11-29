@@ -5,6 +5,11 @@ class Group {
         this.color = groupJSON.color
         this.clans = []
         this.adapter = new ClansAdapter()
+        this.initBindings()
+    }
+
+    initBindings() {
+        this.clansContainer = document.getElementById('clan-view-container')
     }
 
     renderButton() {
@@ -27,7 +32,7 @@ class Group {
         this.adapter
         .getClans(event.target.id)
         .then(group => {
-            group.clans.forEach(clan => this.clans.push(clan))
+            group.clans.forEach(clan => this.clans.push(new Clan(clan)))
         })
         .then(() => {
             this.render()  
@@ -35,7 +40,10 @@ class Group {
     }
 
     render() {
-
+        const clanButtons = this.clans.map(clan => clan.renderClan())
+        clanButtons.forEach(clanButton => {
+            this.clansContainer.appendChild(clanButton)
+        }) 
     }
 
 }
