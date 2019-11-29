@@ -5,4 +5,8 @@ class Group {
         this.color = groupJSON.color
         this.clans = []
     }
+
+    renderButton() {
+        return `${this.name}<br>`
+    }
 }

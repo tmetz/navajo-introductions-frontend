@@ -2,8 +2,12 @@ class Groups {
     constructor() {
         this.groups = []
         this.adapter = new ClanGroupsAdapter()
-        //this.bindEventListeners()
+        this.initBindingsAndEventListeners()
         this.fetchAndLoadGroups()
+    }
+
+    initBindingsAndEventListeners() {
+        this.groupsContainer = document.getElementById('clan-groups-container')
     }
 
     fetchAndLoadGroups() {
@@ -19,9 +23,9 @@ class Groups {
     }
 
     render() {
-        const groupsString = this.groups.map(group => `${group.name}<br>`).join('')
-        const groupsContainer = document.getElementById('clan-groups-container')
-        groupsContainer.innerHTML = `
+        const groupsString = this.groups.map(group => group.renderButton()).join('')
+        
+        this.groupsContainer.innerHTML = `
             ${groupsString}
         `
         
