@@ -12,12 +12,13 @@ class Clan {
         clanPlaceHolder.addEventListener('drop', drop)
         clanPlaceHolder.addEventListener('dragover', allowDrop)
         clanPlaceHolder.className = 'clan-drag'
-        const clanSpan = document.createElement('div')
-        clanSpan.setAttribute("id", "clan-" + this.id)
-        clanSpan.setAttribute("draggable", true) 
-        clanSpan.addEventListener('dragstart', drag)
-        clanSpan.innerHTML = `${this.dine_bizaad_name} <br> (${this.english_name})`
-        clanPlaceHolder.appendChild(clanSpan)
+        const clanDiv = document.createElement('div')
+        clanDiv.className = 'clan-div'
+        clanDiv.setAttribute("id", "clan-" + this.id)
+        clanDiv.setAttribute("draggable", true) 
+        clanDiv.addEventListener('dragstart', drag)
+        clanDiv.innerHTML = `${this.dine_bizaad_name} <br> (${this.english_name})`
+        clanPlaceHolder.appendChild(clanDiv)
         return clanPlaceHolder
     }
 
