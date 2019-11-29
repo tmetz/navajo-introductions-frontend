@@ -1,18 +1,21 @@
 .clan-drag {
-    height:70px;
+    height: 90px;
     border: 1px solid black;
     margin: 10px;
     background-color: black;
+    
 }
 
 .clan-drop {
-    height: 70px;
+    height: 90px;
     border: 1px dotted black;
     margin: 10px;
     background-color: #ffffff;
 }
 
 .clan-div {
+    height: 70px;
+    vertical-align: middle;
     text-align:center;
     margin: 10px;
     border: 1px solid black;
