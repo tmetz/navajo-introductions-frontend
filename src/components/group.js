@@ -7,6 +7,10 @@ class Group {
     }
 
     renderButton() {
-        return `${this.name}<br>`
+        return `
+        <label class="btn btn-secondary">
+            <input type="radio" name="groups" id="${this.id}" autocomplete="off">${this.id}
+        </label>
+        `
     }
 }
