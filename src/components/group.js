@@ -29,6 +29,7 @@ class Group {
     }
 
     fetchAndLoadClans(event) {
+        this.clansContainer.innerHTML = ""
         this.adapter
         .getClans(event.target.id)
         .then(group => {
