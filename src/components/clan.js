@@ -7,9 +7,17 @@ class Clan {
     }
 
     renderClan() {
-        const clanSpan = document.createElement('p')
+        const clanSpan = document.createElement('span')
+        clanSpan.className = 'clan-drag'
+        clanSpan.setAttribute("draggable", true) 
+        clanSpan.addEventListener('dragstart', this.drag)
+        //ondragstart="drag(event)"
         clanSpan.innerHTML = `${this.dine_bizaad_name}`
         return clanSpan
+    }
+
+    drag(event) {
+        event.dataTransfer.setData("text", event.target.id)
     }
 
 
