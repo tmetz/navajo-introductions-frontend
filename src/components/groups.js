@@ -7,8 +7,19 @@ class Groups {
     }
 
     fetchAndLoadGroups() {
-        this.adapter.getGroups().then(groups => {
-            console.log(groups)
+        this.adapter
+        .getGroups()
+        .then(groups => {
+            groups.forEach(group => this.groups.push(group))
         })
+        .then(() => {
+            this.render()
+        })
+    }
+
+    render() {
+        const groupsContainer = document.getElementById('clan-groups-container')
+        groupsContainer.innerHTML='eferfe'
+        
     }
 }
