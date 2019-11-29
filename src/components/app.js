@@ -1,5 +1,5 @@
 class App {
     constructor() {
-        this.groups = new groups()
+        this.groups = new Groups()
     }
 }
