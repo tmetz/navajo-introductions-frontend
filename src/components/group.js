@@ -8,7 +8,7 @@ class Group {
 
     renderButton() {
         return `
-        <label class="btn btn-secondary">
+        <label class="btn btn-secondary" style="background-color: ${this.color}; color: #ffffb3">
             <input type="radio" name="groups" id="${this.id}" autocomplete="off">${this.id}
         </label>
         `
