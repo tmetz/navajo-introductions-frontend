@@ -7,10 +7,22 @@ class Group {
     }
 
     renderButton() {
-        return `
-        <label class="btn btn-secondary" style="background-color: ${this.color}; color: #ffffb3">
-            <input type="radio" name="groups" id="${this.id}" autocomplete="off">${this.id}
-        </label>
-        `
+        const button = document.createElement('label')
+        const radio = document.createElement('input')
+        radio.setAttribute("type", "radio")
+        radio.setAttribute("name", "groups")
+        radio.setAttribute("autocomplete", "off")
+        radio.addEventListener('click', this.loadClans)
+        radio.setAttribute("id", this.id)
+        button.innerHTML = `${this.id}`
+        button.className = 'btn btn-secondary'
+        button.style.color = "#ffffb3"
+        button.style.backgroundColor = `"${this.color}"`
+        button.appendChild(radio)
+        return button
+    }
+
+    loadClans(event) {
+        console.log(event)
     }
 }
