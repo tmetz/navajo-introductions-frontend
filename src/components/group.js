@@ -4,6 +4,7 @@ class Group {
         this.name = groupJSON.name
         this.color = groupJSON.color
         this.clans = []
+        this.adapter = new ClansAdapter()
     }
 
     renderButton() {
@@ -12,7 +13,7 @@ class Group {
         radio.setAttribute("type", "radio")
         radio.setAttribute("name", "groups")
         radio.setAttribute("autocomplete", "off")
-        radio.addEventListener('click', this.loadClans)
+        radio.addEventListener('click', this.fetchAndLoadClans.bind(this))
         radio.setAttribute("id", this.id)
         button.innerHTML = `${this.id}`
         button.className = 'btn btn-secondary'
@@ -22,7 +23,19 @@ class Group {
         return button
     }
 
-    loadClans(event) {
-        console.log(event)
+    fetchAndLoadClans(event) {
+        this.adapter
+        .getClans(event.target.id)
+        .then(group => {
+            group.clans.forEach(clan => this.clans.push(clan))
+        })
+        .then(() => {
+            this.render()  
+        })  
     }
+
+    render() {
+
+    }
+
 }

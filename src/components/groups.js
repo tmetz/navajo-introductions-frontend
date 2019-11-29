@@ -2,11 +2,11 @@ class Groups {
     constructor() {
         this.groups = []
         this.adapter = new ClanGroupsAdapter()
-        this.initBindingsAndEventListeners()
+        this.initBindings()
         this.fetchAndLoadGroups()
     }
 
-    initBindingsAndEventListeners() {
+    initBindings() {
         this.groupsContainer = document.getElementById('clan-groups-container')
     }
 
