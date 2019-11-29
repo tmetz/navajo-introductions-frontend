@@ -23,13 +23,14 @@ class Group {
         button.innerHTML = `${this.id}`
         button.className = 'btn btn-secondary'
         button.style.color = "#ffffb3"
-        button.style.backgroundColor = `"${this.color}"`
+        button.style.backgroundColor = this.color
         button.appendChild(radio)
         return button
     }
 
     fetchAndLoadClans(event) {
-        this.clansContainer.innerHTML = ""
+        this.clansContainer.innerHTML = `<h3>${this.name}</h3>`
+        this.clansContainer.style.backgroundColor = this.color
         this.adapter
         .getClans(event.target.id)
         .then(group => {

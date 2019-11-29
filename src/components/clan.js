@@ -12,7 +12,7 @@ class Clan {
         clanSpan.setAttribute("draggable", true) 
         clanSpan.addEventListener('dragstart', this.drag)
         //ondragstart="drag(event)"
-        clanSpan.innerHTML = `${this.dine_bizaad_name}`
+        clanSpan.innerHTML = `${this.dine_bizaad_name} - ${this.english_name}`
         return clanSpan
     }
 
