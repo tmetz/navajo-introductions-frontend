@@ -8,3 +8,8 @@ class ClanGroupsAdapter {
         )
     }
 }
+
+adapter = new ClanGroupsAdapter()
+
+const groups = adapter.getGroups()
+
