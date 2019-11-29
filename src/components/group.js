@@ -44,6 +44,7 @@ class Group {
 
     render() {
         const clanButtons = this.clans.map(clan => clan.renderClan())
+        console.log(this.clans)
         clanButtons.forEach(clanButton => {
             this.clansContainer.appendChild(clanButton)
         }) 

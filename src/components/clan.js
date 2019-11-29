@@ -22,9 +22,5 @@ class Clan {
         return clanPlaceHolder
     }
 
-    drag(event) {
-        event.dataTransfer.setData("text", event.target.id)
-    }
-
 
 }
