@@ -11,7 +11,6 @@ class Groups {
         .getGroups()
         .then(groups => {
             groups.forEach(group => this.groups.push(new Group(group)))
-            console.log(this.groups)
         })
         .then(() => {
             this.render()
@@ -20,9 +19,11 @@ class Groups {
     }
 
     render() {
+        const groupsString = this.groups.map(group => `${group.name}<br>`).join('')
         const groupsContainer = document.getElementById('clan-groups-container')
-        groupsContainer.innerHTML='eferfe'
-        
+        groupsContainer.innerHTML = `
+            ${groupsString}
+        `
         
     }
 }
