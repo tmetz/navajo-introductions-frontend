@@ -7,16 +7,18 @@ class Clan {
     }
 
     renderClan() {
+        const clanPlaceHolder = document.createElement('div')
+        clanPlaceHolder.setAttribute("id", "placeholder-" + this.id)
+        clanPlaceHolder.addEventListener('drop', drop)
+        clanPlaceHolder.addEventListener('dragover', allowDrop)
+        clanPlaceHolder.className = 'clan-drag'
         const clanSpan = document.createElement('div')
-        clanSpan.className = 'clan-drag'
-        clanSpan.setAttribute("id", this.id)
+        clanSpan.setAttribute("id", "clan-" + this.id)
         clanSpan.setAttribute("draggable", true) 
         clanSpan.addEventListener('dragstart', drag)
-        clanSpan.addEventListener('ondrop', drop)
-        clanSpan.addEventListener('ondragover', allowDrop)
-        //ondragstart="drag(event)"
         clanSpan.innerHTML = `${this.dine_bizaad_name} <br> (${this.english_name})`
-        return clanSpan
+        clanPlaceHolder.appendChild(clanSpan)
+        return clanPlaceHolder
     }
 
     drag(event) {

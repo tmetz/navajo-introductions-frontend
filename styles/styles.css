@@ -1,12 +1,13 @@
 .clan-drag {
-    border: 5px solid black;
+    height:60px;
+    border: 1px solid black;
     margin: 20px;
     background-color: #ffffff;
 }
 
 .clan-drop {
-    height: 100px;
-    border: 3px dotted black;
+    height: 60px;
+    border: 1px dotted black;
     margin: 20px;
     background-color: #ffffff;
 }
