@@ -10,6 +10,7 @@ class Group {
 
     initBindings() {
         this.clansContainer = document.getElementById('clan-view-container')
+        this.dropContainer = document.getElementById('clan-drop-container')
     }
 
     renderButton() {
