@@ -19,11 +19,18 @@ class Intro {
 
     updateClanStats(clanIDs) {
         clanIDs.forEach(id => {
-            this.adapter.updateClanCount(id).then(resp => {
-                console.log(resp)
-            })
+            this.adapter.updateClanCount(id)
         });
     }
+
+    copyToClipboard(event) {
+        const text = document.getElementById("clanTextArea")
+        text.select()
+        text.setSelectionRange(0, 99999)
+        document.execCommand("copy")
+        alert("Copied to clipboard")
+    }
+
 
     constructIntro() {
         const clanIDs = []
@@ -45,31 +52,31 @@ class Intro {
         const clanStringsDine = []
         const clanStringsEnglish = []
 
-        clanStringsDine[0] = 'Yá’át’ééh.<br>  Shí éí ' + visitorName.value + ' yinishyé.<br>'
-
-        clanStringsDine[1] = motherClanName + ' nishłį́. <br>'
-
-        clanStringsDine[2] = fatherClanName + ' bashishchiin. <br>'
-        
-        clanStringsDine[3] = maternalGrandpaClanName + ' dashicheii, áádóó  <br>'
-        
-        clanStringsDine[4] = paternalGrandpaClanName + ' dashinalí. <br>'
+        clanStringsDine[0] = 'Yá’át’ééh.\nShí éí ' + visitorName.value + ' yinishyé.\n'
+        clanStringsDine[1] = motherClanName + ' nishłį́. \n'
+        clanStringsDine[2] = fatherClanName + ' bashishchiin. \n'
+        clanStringsDine[3] = maternalGrandpaClanName + ' dashicheii, áádóó \n'
+        clanStringsDine[4] = paternalGrandpaClanName + ' dashinalí. \n'
 
 
-        clanStringsEnglish[0] = 'Hello.<br>  I am called [My name is] ' + visitorName.value + '.<br>'
+        clanStringsEnglish[0] = 'Hello.\nI am called [My name is] ' + visitorName.value + '.\n'
+        clanStringsEnglish[1] = 'I am from ' + motherClanName + '. \n'
+        clanStringsEnglish[2] = 'I am born for ' + fatherClanName + '.\n'
+        clanStringsEnglish[3] = 'My maternal grandfather is from ' + maternalGrandpaClanName + ', and \n'
+        clanStringsEnglish[4] = 'My paternal grandfather is from ' + paternalGrandpaClanName + '. \n'
 
-        clanStringsEnglish[1] = 'I am from ' + motherClanName + '. <br>'
-
-        clanStringsEnglish[2] = 'I am born for ' + fatherClanName + '.<br>'
-
-        clanStringsEnglish[3] = 'My maternal grandfather is from ' + maternalGrandpaClanName + ', and <br>'
-        
-        clanStringsEnglish[4] = 'My paternal grandfather is from ' + paternalGrandpaClanName + '. <br>'
-
-        const clanStringDine = clanStringsDine.join(' ')
-        const clanStringEnglish = clanStringsEnglish.join(' ')
+        const clanStringDine = clanStringsDine.join('')
+        const clanStringEnglish = clanStringsEnglish.join('')
         this.clansContainer.style.backgroundColor = "#ffffff"
-        this.clansContainer.innerHTML = `${clanStringDine} <br><br> ${clanStringEnglish}`
+        this.clansContainer.innerHTML = `
+            <textarea rows = "15" cols = "35" id = "clanTextArea">${clanStringDine} \n${clanStringEnglish}
+            </textarea><br><br>`
+
+        const button = document.createElement('button')
+        button.innerText = "Copy text"
+        button.className = 'btn btn-secondary btn-sm'
+        button.addEventListener('click', this.copyToClipboard.bind(this))
+        this.clansContainer.appendChild(button)
         visitorName.value = ''
     }
 
