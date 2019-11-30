@@ -14,32 +14,37 @@ class Intro {
         const maternalGrandpaClanName = document.getElementById("maternal-grandpa").childNodes[0].attributes["name"].value
         const paternalGrandpaClanName = document.getElementById("paternal-grandpa").childNodes[0].attributes["name"].value
 
-        const clanStrings = []
+        const visitorName = document.getElementById("visitor-name").value
 
-        clanStrings[0] = 'Yá’át’ééh.  Shí éí '
+        const clanStringsDine = []
+        const clanStringsEnglish = []
 
-        clanStrings[1] = motherClanName + ' nishłį́'
+        clanStringsDine[0] = 'Yá’át’ééh.<br>  Shí éí ' + visitorName + ' yinishyé.<br>'
 
-        clanStrings[2] = fatherClanName + ' bashishchiin'
+        clanStringsDine[1] = motherClanName + ' nishłį́. <br>'
+
+        clanStringsDine[2] = fatherClanName + ' bashishchiin. <br>'
         
 
-        clanStrings[3] = maternalGrandpaClanName + ' dashicheii'
+        clanStringsDine[3] = maternalGrandpaClanName + ' dashicheii. <br>'
         
-        clanStrings[4] = paternalGrandpaClanName + ' dashinalí'
+        clanStringsDine[4] = paternalGrandpaClanName + ' dashinalí. <br>'
+
+        clanStringsEnglish[0] = 'Hello.<br>  I am called [My name is] ' + visitorName + '.<br>'
+
+        clanStringsEnglish[1] = 'I am ' + motherClanName + '. <br>'
+
+        clanStringsEnglish[2] = 'I am born for ' + fatherClanName + '.<br>'
         
-        console.log(clanStrings)
-        const clanString = clanStrings.join(' ')
-        console.log(clanString)
+
+        clanStringsEnglish[3] = 'My maternal grandfather is ' + maternalGrandpaClanName + '. <br>'
+        
+        clanStringsEnglish[4] = 'My paternal grandfather is ' + paternalGrandpaClanName + '. <br>'
+
+        const clanStringDine = clanStringsDine.join(' ')
+        const clanStringEnglish = clanStringsEnglish.join(' ')
         this.clansContainer.style.backgroundColor = "#ffffff"
-        this.clansContainer.innerHTML = `${clanString}`
+        this.clansContainer.innerHTML = `${clanStringDine} <br><br> ${clanStringEnglish}`
     }
 
 }
-
-/*
-
- (Hello). 
-
- (name) yinishyé (I am called ... ) 
-
-*/
