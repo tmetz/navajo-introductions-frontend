@@ -11,35 +11,40 @@
         <div class="container">
             <h1>Navajo Introductions</h1>
             <div id = "clan-groups-container" class="btn-group btn-group-toggle" data-toggle="buttons"></div>
-            <br><br>
-            <div class="row">
-                <div id = "clan-view-container" class="col">
-                    <h3>Background Information</h3>
-                    <p>(Disclaimer: I am a non-native student of Navajo culture, not an expert.  I welcome corrections to this information - email me at <a href = "mailto:tammy@tammymetz.com">tammy@tammymetz.com</a>>)</p>
-                    <p>An important part of Navajo culture is introducing yourself with your 4 clans.  This establishes kinship (who you are related to), which is extremely important.  You should have 4 different clans, and you cannot marry someone with the same clan as you.</p>
-                    <p>Your 4 clans come from your mother, father, maternal grandfather, and paternal grandfather.  Since Navajo culture is matrilineal (passed down through the mother), you do not need to list your grandmothers (for example, your maternal grandmother's clan is the same as your mother's clan).  For a great explanation, read <a href = "https://www.azcentral.com/story/news/local/arizona/2019/08/29/what-means-introduce-yourself-navajo-clan-system/2131456001/">this article from the Arizona Republic newspaper.</a> and <a href = "https://www.youtube.com/watch?v=VYAd9KuScoc&t=232s">watch this video from Navajo pharmacist Terry Teller.</a></watch></p>
-                    <p>The clan groupings and color-coding I used mostly follow <a href = "http://www.chinleusd.k12.az.us/nclhome/files/2016/09/•-Navajo-Clan-Names-Groups.pdf">this publication of Chinle Unified School District #24</a></p>
-                    <h3>Instructions</h3>
-                    <p>Click on a clan group number to see the clans belonging to that group.  Then select your clans and drag and drop them to the boxes on the right.</p>
-                    <p>Clans of other natives (non-Navajo) are in groups 10-13.  Clans of non-natives are in groups 14-16.</p>
+                <br><br>
+                <div class="row">
+                    <div id = "clan-view-container" class="col">
+                        <h3>Background Information</h3>
+                        <p>(Disclaimer: I am a non-native student of Navajo culture, not an expert.  I welcome corrections to this information - email me at <a href = "mailto:tammy@tammymetz.com">tammy@tammymetz.com</a>>)</p>
+                        <p>An important part of Navajo culture is introducing yourself with your 4 clans.  This establishes kinship (who you are related to), which is extremely important.  You should have 4 different clans, and you cannot marry someone with the same clan as you.</p>
+                        <p>Your 4 clans come from your mother, father, maternal grandfather, and paternal grandfather.  Since Navajo culture is matrilineal (passed down through the mother), you do not need to list your grandmothers (for example, your maternal grandmother's clan is the same as your mother's clan).  For a great explanation, read <a href = "https://www.azcentral.com/story/news/local/arizona/2019/08/29/what-means-introduce-yourself-navajo-clan-system/2131456001/">this article from the Arizona Republic newspaper.</a> and <a href = "https://www.youtube.com/watch?v=VYAd9KuScoc&t=232s">watch this video from Navajo pharmacist Terry Teller.</a></watch></p>
+                        <p>The clan groupings and color-coding I used mostly follow <a href = "http://www.chinleusd.k12.az.us/nclhome/files/2016/09/•-Navajo-Clan-Names-Groups.pdf">this publication of Chinle Unified School District #24</a></p>
+                        <h3>Instructions</h3>
+                        <p>Click on a clan group number to see the clans belonging to that group.  Then select your clans and drag and drop them to the boxes on the right.</p>
+                        <p>Clans of other natives (non-Navajo) are in groups 10-13.  Clans of non-natives are in groups 14-16.</p>
+                    </div>
+                    <div id = "clan-drop-container" class = "col">
+                        <p>My name is: </p>
+                        <p><input type = "text" id = "visitor-name"></p>
+                        <p>My mother's clan is:</p>
+                        <div id = "mother" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <p>My father's clan is:</p>
+                        <div id = "father" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <p>My maternal grandfather (mother's father's) clan is:</p>
+                        <div id = "maternal-grandpa" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <p>My paternal grandfather (father's father's) clan is:</p>
+                        <div id = "paternal-grandpa" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                        <div>
+                            <p>Done?  If you have filled in all 4 clans, hit the button below to generate your personal introduction and record statistics about your clans:</p>
+                            <button type="button" class="btn btn-dark btn-sm" onclick="app.intro.constructIntro()">Show Introduction</button>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div id = "clan-drop-container" class = "col">
-                    <p>My name is: </p>
-                    <p><input type = "text" id = "visitor-name"></p>
-                    <p>My mother's clan is:</p>
-                    <div id = "mother" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <p>My father's clan is:</p>
-                    <div id = "father" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <p>My maternal grandfather (mother's father's) clan is:</p>
-                    <div id = "maternal-grandpa" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <p>My paternal grandfather (father's father's) clan is:</p>
-                    <div id = "paternal-grandpa" class = "clan-drop" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <button type="button" class="btn btn-dark btn-sm" onclick="app.intro.constructIntro()">Show Introduction</button>
+                <div class = "row">
+                    <p>The top 3 represented clans are: </p>
                 </div>
-            </div>
-            <br>
             
-
             </div>
         </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
