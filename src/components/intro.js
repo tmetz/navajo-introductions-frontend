@@ -69,11 +69,10 @@ class Intro {
         const clanStringEnglish = clanStringsEnglish.join('')
         this.clansContainer.style.backgroundColor = "#ffffff"
         this.clansContainer.innerHTML = `
-            <textarea rows = "15" cols = "35" id = "clanTextArea">${clanStringDine} \n${clanStringEnglish}
-            </textarea><br><br>`
+            <textarea rows = "15" cols = "35" id = "clanTextArea">${clanStringDine} \n${clanStringEnglish}</textarea><br><br>`
 
         const button = document.createElement('button')
-        button.innerText = "Copy text"
+        button.innerText = "Copy text to clipboard"
         button.className = 'btn btn-secondary btn-sm'
         button.addEventListener('click', this.copyToClipboard.bind(this))
         this.clansContainer.appendChild(button)
