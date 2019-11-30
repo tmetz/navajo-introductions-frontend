@@ -40,12 +40,12 @@ class Intro {
         const maternalGrandpaClanName = document.getElementById("maternal-grandpa").childNodes[0].attributes["name"].value
         const paternalGrandpaClanName = document.getElementById("paternal-grandpa").childNodes[0].attributes["name"].value
 
-        const visitorName = document.getElementById("visitor-name").value
+        const visitorName = document.getElementById("visitor-name")
 
         const clanStringsDine = []
         const clanStringsEnglish = []
 
-        clanStringsDine[0] = 'Yá’át’ééh.<br>  Shí éí ' + visitorName + ' yinishyé.<br>'
+        clanStringsDine[0] = 'Yá’át’ééh.<br>  Shí éí ' + visitorName.value + ' yinishyé.<br>'
 
         clanStringsDine[1] = motherClanName + ' nishłį́. <br>'
 
@@ -56,7 +56,7 @@ class Intro {
         clanStringsDine[4] = paternalGrandpaClanName + ' dashinalí. <br>'
 
 
-        clanStringsEnglish[0] = 'Hello.<br>  I am called [My name is] ' + visitorName + '.<br>'
+        clanStringsEnglish[0] = 'Hello.<br>  I am called [My name is] ' + visitorName.value + '.<br>'
 
         clanStringsEnglish[1] = 'I am from ' + motherClanName + '. <br>'
 
@@ -70,6 +70,7 @@ class Intro {
         const clanStringEnglish = clanStringsEnglish.join(' ')
         this.clansContainer.style.backgroundColor = "#ffffff"
         this.clansContainer.innerHTML = `${clanStringDine} <br><br> ${clanStringEnglish}`
+        visitorName.value = ''
     }
 
 }
