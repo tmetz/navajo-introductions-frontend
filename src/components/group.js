@@ -30,6 +30,7 @@ class Group {
     }
 
     fetchAndLoadClans(event) {
+        this.clans = []
         this.clansContainer.innerHTML = `<h3>${this.name}</h3>`
         this.clansContainer.style.backgroundColor = this.color
         this.adapter
