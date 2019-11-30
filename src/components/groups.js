@@ -18,7 +18,6 @@ class Groups {
         })
         .then(() => {
             this.render()
-            
         })
     }
 

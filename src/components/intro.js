@@ -19,7 +19,9 @@ class Intro {
 
     updateClanStats(clanIDs) {
         clanIDs.forEach(id => {
-            this.adapter.updateClanCount(id)
+            this.adapter.updateClanCount(id).then(resp => {
+                console.log(resp)
+            })
         });
     }
 
@@ -31,6 +33,7 @@ class Intro {
         clanIDs[3] = document.getElementById("paternal-grandpa").childNodes[0].id.slice(5)
 
         this.updateClanStats(clanIDs)
+        this.fetchAndLoadTopClans()
 
         const motherClanName = document.getElementById("mother").childNodes[0].attributes["name"].value
         const fatherClanName = document.getElementById("father").childNodes[0].attributes["name"].value

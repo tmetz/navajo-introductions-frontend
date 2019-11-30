@@ -4,7 +4,6 @@ class ClansAdapter {
     }
 
     getClans(groupID) {
-        return fetch(this.baseURL + `${groupID}`).then(res => res.json()
-        )
+        return fetch(this.baseURL + `${groupID}`).then(res => res.json())
     }
 }
