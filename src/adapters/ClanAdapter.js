@@ -5,9 +5,9 @@ class ClanAdapter {
 
     updateClanCount(clanID) {
         let configurationObject = {
-            method: "PATCH"
+            method: "PATCH",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
                 "Accept": "application/json"
             }
         };

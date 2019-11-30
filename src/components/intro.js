@@ -1,10 +1,13 @@
 class Intro {
     constructor() {
         this.clansContainer = document.getElementById('clan-view-container')
+        this.adapter = new ClanAdapter()
     }
 
     updateClanStats(clanIDs) {
-        console.log(clanIDs)
+        clanIDs.forEach(id => {
+            this.adapter.updateClanCount(id)
+        });
     }
 
     constructIntro() {
