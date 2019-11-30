@@ -1,8 +1,10 @@
+# README
+
 ### Introduction
 
 (Disclaimer: I am a non-native student of Navajo culture, not an expert. I welcome corrections to this information - email me at [tammy@tammymetz.com](mailto:tammy@tammymetz.com))
 
-This is the front end API for the "Navajo Introductions" application.  This SPA (Single Page Application) walks a user through selecting their four clans (mother's, father's, maternal grandfather's, and paternal grandfather's), then constructs the formal introduction in Navajo language.  This introduction is used in social situations and presentations.
+This is the front end for the "Navajo Introductions" application.  This SPA (Single Page Application) walks a user through selecting their four clans (mother's, father's, maternal grandfather's, and paternal grandfather's), then constructs the formal introduction in Navajo language.  This introduction is used in social situations and presentations.
 
 
 Navajo Introductions is a SPA (Single Page Application) to generate a personalized greeting for someone, in Navajo language, based on their 4 clans.  [You can watch a walkthrough video here.](https://www.youtube.com/watch?v=-bNTm2Zrurc&feature=youtu.be)  [Go here for the GitHub repository for the front end](https://github.com/tmetz/navajo-introductions-frontend).  [Go here for the GitHub repository for the back end.](https://github.com/tmetz/navajo-introductions-backend)  
