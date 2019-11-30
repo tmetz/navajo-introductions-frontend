@@ -15,6 +15,7 @@ class Clan {
         const clanDiv = document.createElement('div')
         clanDiv.className = 'clan-div'
         clanDiv.setAttribute("id", "clan-" + this.id)
+        clanDiv.setAttribute("name", this.dine_bizaad_name)
         clanDiv.setAttribute("draggable", true) 
         clanDiv.addEventListener('dragstart', drag)
         clanDiv.innerHTML = `${this.dine_bizaad_name} <br> (${this.english_name})`

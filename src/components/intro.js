@@ -1,6 +1,6 @@
 class Intro {
     constructor() {
-        this.adapter = new ClanAdapter()
+        this.clansContainer = document.getElementById('clan-view-container')
     }
 
     constructIntro() {
@@ -8,37 +8,38 @@ class Intro {
         const fatherClanID = document.getElementById("father").childNodes[0].id.slice(5)
         const maternalGrandpaClanID = document.getElementById("maternal-grandpa").childNodes[0].id.slice(5)
         const paternalGrandpaClanID = document.getElementById("paternal-grandpa").childNodes[0].id.slice(5)
+
+        const motherClanName = document.getElementById("mother").childNodes[0].attributes["name"].value
+        const fatherClanName = document.getElementById("father").childNodes[0].attributes["name"].value
+        const maternalGrandpaClanName = document.getElementById("maternal-grandpa").childNodes[0].attributes["name"].value
+        const paternalGrandpaClanName = document.getElementById("paternal-grandpa").childNodes[0].attributes["name"].value
+
         const clanStrings = []
-        this.adapter
-        .getClan(motherClanID)
-        .then(clan => {
-            clanStrings[0] = clan.dine_bizaad_name + ' nishłį́'
-        })
-        this.adapter
-        .getClan(fatherClanID)
-        .then(clan => {
-            clanStrings[1] = clan.dine_bizaad_name + ' bashishchiin'
-        })
-        this.adapter
-        .getClan(maternalGrandpaClanID)
-        .then(clan => {
-            clanStrings[2] = clan.dine_bizaad_name + ' dashicheii'
-        })
-        this.adapter
-        .getClan(paternalGrandpaClanID)
-        .then(clan => {
-            clanStrings[3] = clan.dine_bizaad_name + ' dashinalí'
-        })
+
+        clanStrings[0] = 'Yá’át’ééh.  Shí éí '
+
+        clanStrings[1] = motherClanName + ' nishłį́'
+
+        clanStrings[2] = fatherClanName + ' bashishchiin'
+        
+
+        clanStrings[3] = maternalGrandpaClanName + ' dashicheii'
+        
+        clanStrings[4] = paternalGrandpaClanName + ' dashinalí'
+        
         console.log(clanStrings)
+        const clanString = clanStrings.join(' ')
+        console.log(clanString)
+        this.clansContainer.style.backgroundColor = "#ffffff"
+        this.clansContainer.innerHTML = `${clanString}`
     }
 
 }
 
 /*
 
-Yá’át’ééh (Hello). 
-Then they move into their name.
+ (Hello). 
 
-Shí éí (name) yinishyé (I am called ... ) 
+ (name) yinishyé (I am called ... ) 
 
 */
