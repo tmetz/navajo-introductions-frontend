@@ -1,7 +1,20 @@
 class Intro {
     constructor() {
         this.clansContainer = document.getElementById('clan-view-container')
+        this.topClansContainer = document.getElementById('top-clans')
         this.adapter = new ClanAdapter()
+        this.fetchAndLoadTopClans()
+    }
+
+    fetchAndLoadTopClans() {
+        const topClans = []
+        this.adapter.getTop()
+        .then(clans => {
+            clans.forEach(clan => topClans.push(clan.dine_bizaad_name + ' (' + clan.english_name + ')<br>'))
+        })
+        .then(() => {
+            this.topClansContainer.innerHTML = topClans.join(' ')  
+        })
     }
 
     updateClanStats(clanIDs) {

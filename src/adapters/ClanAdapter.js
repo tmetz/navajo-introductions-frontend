@@ -15,4 +15,9 @@ class ClanAdapter {
         return fetch(this.baseURL + `${clanID}`, configurationObject).then(res => res.json()
         )
     }
+
+    getTop() {
+        return fetch(this.baseURL + 'top').then(res => res.json()
+        )
+    }
 }
