@@ -26,20 +26,20 @@ class Intro {
         clanStringsDine[2] = fatherClanName + ' bashishchiin. <br>'
         
 
-        clanStringsDine[3] = maternalGrandpaClanName + ' dashicheii. <br>'
+        clanStringsDine[3] = maternalGrandpaClanName + ' dashicheii, áádóó  <br>'
         
         clanStringsDine[4] = paternalGrandpaClanName + ' dashinalí. <br>'
 
         clanStringsEnglish[0] = 'Hello.<br>  I am called [My name is] ' + visitorName + '.<br>'
 
-        clanStringsEnglish[1] = 'I am ' + motherClanName + '. <br>'
+        clanStringsEnglish[1] = 'I am from ' + motherClanName + '. <br>'
 
         clanStringsEnglish[2] = 'I am born for ' + fatherClanName + '.<br>'
         
 
-        clanStringsEnglish[3] = 'My maternal grandfather is ' + maternalGrandpaClanName + '. <br>'
+        clanStringsEnglish[3] = 'My maternal grandfather is from ' + maternalGrandpaClanName + ', and <br>'
         
-        clanStringsEnglish[4] = 'My paternal grandfather is ' + paternalGrandpaClanName + '. <br>'
+        clanStringsEnglish[4] = 'My paternal grandfather is from ' + paternalGrandpaClanName + '. <br>'
 
         const clanStringDine = clanStringsDine.join(' ')
         const clanStringEnglish = clanStringsEnglish.join(' ')
