@@ -23,7 +23,8 @@ class Group {
         radio.setAttribute("id", this.id)
         button.innerHTML = `${this.id}`
         button.className = 'btn btn-secondary'
-        button.style.color = "#ffffb3"
+        button.style.textShadow = "2px 2px 6px #ffffff"
+        button.style.color = "#000000"
         button.style.backgroundColor = this.color
         button.appendChild(radio)
         return button
