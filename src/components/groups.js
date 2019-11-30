@@ -23,7 +23,6 @@ class Groups {
     }
 
     render() {
-        //const groupsString = this.groups.map(group => group.renderButton()).join('')
         const buttons = this.groups.map(group => group.renderButton())
         buttons.forEach(button => {
             this.groupsContainer.appendChild(button)
