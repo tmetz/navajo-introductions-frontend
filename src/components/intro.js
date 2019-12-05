@@ -48,6 +48,7 @@ class Intro {
         const paternalGrandpaClanName = document.getElementById("paternal-grandpa").childNodes[0].attributes["name"].value
 
         const visitorName = document.getElementById("visitor-name")
+        const draggedClans = document.getElementsByClassName("dragged")
 
         const clanStringsDine = []
         const clanStringsEnglish = []
@@ -77,6 +78,14 @@ class Intro {
         button.addEventListener('click', this.copyToClipboard.bind(this))
         this.clansContainer.appendChild(button)
         visitorName.value = ''
+        console.log(draggedClans)
+        for (let i = draggedClans.length - 1; i >= 0; i--) {
+            draggedClans[i].remove();
+        }
+        // forEach on the NodeList did not work, so using regular for loop
+        // draggedClans.forEach (clan => {
+        //     clan.remove();
+        // });
     }
 
 }

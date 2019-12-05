@@ -11,5 +11,7 @@ function drag(ev) {
 function drop(ev) {
     ev.preventDefault();
     const data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
+    const currentClan = document.getElementById(data);
+    currentClan.classList.add("dragged")
+    ev.target.appendChild(currentClan);
 }
