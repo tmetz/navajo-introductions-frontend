@@ -4,5 +4,5 @@
   "description": "An application to generate a Navajo language introduction",
   "dependencies": {
     "serve": "^10.0.1"
-  },
+  }
 }
