@@ -2,6 +2,9 @@
   "name": "navajo-introductions",
   "version": "1.0.0",
   "description": "An application to generate a Navajo language introduction",
+  "scripts": {
+    "start": "serve",
+  },
   "dependencies": {
     "serve": "^10.0.1"
   }
