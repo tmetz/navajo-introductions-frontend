@@ -1,6 +1,6 @@
 class ClansAdapter {
     constructor() {
-        this.baseURL = 'http://localhost:3000/api/v1/clan_groups/'
+        this.baseURL = 'https://navajo-introductions-api.herokuapp.com/api/v1/clan_groups/'
     }
 
     getClans(groupID) {

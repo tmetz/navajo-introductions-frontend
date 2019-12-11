@@ -1,6 +1,6 @@
 class ClanAdapter {
     constructor() {
-        this.baseURL = 'http://localhost:3000/api/v1/clans/'
+        this.baseURL = 'https://navajo-introductions-api.herokuapp.com/api/v1/clans/'
     }
 
     updateClanCount(clanID) {
